@@ -16,47 +16,53 @@ class CardBooks extends StatelessWidget {
   Widget build(BuildContext context) {
     final textTheme = Theme.of(context).textTheme;
 
-    return GestureDetector(
-      onTap: () {
-        Navigator.of(context).pushReplacement(
-          MaterialPageRoute(
-            builder: (context) => PdfViewPage(path),
-          ),
-        );
-      },
-      child: Card(
-        elevation: 5,
-        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
-        margin: const EdgeInsets.symmetric(horizontal: 30, vertical: 10),
-        child: Container(
-          padding: const EdgeInsets.only(
-            top: 10,
-            bottom: 10,
-            left: 10,
-            right: 20,
-          ),
-          decoration: BoxDecoration(
-            color: Colors.blue,
-            borderRadius: BorderRadius.circular(20),
-          ),
-          height: 60,
-          child: Row(
-            children: [
-              // Image
-              ClipRRect(
-                borderRadius: BorderRadius.circular(5),
-                child: Image.asset(
-                  isWord ? 'assets/images/word.png' : 'assets/images/pdf.jpg',
-                ),
+    return Card(
+      elevation: 5,
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
+      margin: const EdgeInsets.symmetric(horizontal: 30, vertical: 10),
+      child: Container(
+        padding: const EdgeInsets.only(
+          top: 10,
+          bottom: 10,
+          left: 10,
+          right: 20,
+        ),
+        decoration: BoxDecoration(
+          color: Colors.blue,
+          borderRadius: BorderRadius.circular(20),
+        ),
+        height: 60,
+        child: Row(
+          children: [
+            // Image
+            ClipRRect(
+              borderRadius: BorderRadius.circular(5),
+              child: Image.asset(
+                isWord ? 'assets/images/word.png' : 'assets/images/pdf.jpg',
               ),
-              // Nombre
-              const SizedBox(width: 10),
-              Text(title, style: textTheme.bodySmall),
-              // Icono
-              const Expanded(child: SizedBox()),
-              const Icon(Icons.search, color: Colors.white),
-            ],
-          ),
+            ),
+            // Nombre
+            const SizedBox(width: 10),
+            Text(title, style: textTheme.bodySmall),
+            // Icono
+            const Expanded(child: SizedBox()),
+            IconButton(
+              iconSize: 25,
+              onPressed: () {
+                Navigator.of(context).pushReplacement(
+                  MaterialPageRoute(
+                    builder: (context) => PdfViewPage(path),
+                  ),
+                );
+              },
+              icon: const Icon(Icons.file_copy, color: Colors.white),
+            ),
+            IconButton(
+              iconSize: 25,
+              onPressed: () {},
+              icon: const Icon(Icons.download, color: Colors.white),
+            ),
+          ],
         ),
       ),
     );
