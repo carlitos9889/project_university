@@ -10,8 +10,11 @@ class VideoApp extends StatefulWidget {
   _VideoAppState createState() => _VideoAppState();
 }
 
-class _VideoAppState extends State<VideoApp> {
+class _VideoAppState extends State<VideoApp>
+    with SingleTickerProviderStateMixin {
   late VideoPlayerController _controller;
+  bool _isPlay = false;
+  late AnimationController _animationController;
 
   @override
   void initState() {
@@ -21,6 +24,10 @@ class _VideoAppState extends State<VideoApp> {
         // Ensure the first frame is shown after the video is initialized, even before the play button has been pressed.
         setState(() {});
       });
+    _animationController = AnimationController(
+      duration: const Duration(milliseconds: 300),
+      vsync: this,
+    );
   }
 
   @override
@@ -49,6 +56,13 @@ class _VideoAppState extends State<VideoApp> {
           const SizedBox(height: 20),
           ElevatedButton(
             onPressed: () {
+              if (_isPlay == false) {
+                _animationController.forward();
+                _isPlay = true;
+              } else {
+                _animationController.reverse();
+                _isPlay = false;
+              }
               setState(() {
                 _controller.value.isPlaying
                     ? _controller.pause()
@@ -56,23 +70,14 @@ class _VideoAppState extends State<VideoApp> {
               });
             },
             style: ElevatedButton.styleFrom(),
-            child: const Icon(Icons.play_arrow),
+            child: AnimatedIcon(
+              icon: AnimatedIcons.play_pause,
+              progress: _animationController,
+            ),
           )
         ],
       ),
     );
-    // floatingActionButton: FloatingActionButton(
-    //   onPressed: () {
-    //     setState(() {
-    //       _controller.value.isPlaying
-    //           ? _controller.pause()
-    //           : _controller.play();
-    //     });
-    //   },
-    //   child: Icon(
-    //     _controller.value.isPlaying ? Icons.pause : Icons.play_arrow,
-    //   ),
-    // ),
   }
 
   @override
