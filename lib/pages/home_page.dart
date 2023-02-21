@@ -40,10 +40,11 @@ class _HomePageState extends State<HomePage> {
       body: PageView(
         onPageChanged: _onPageChanged,
         controller: _pageController,
-        children: const [StartView(), CursoView()],
+        children: const [VideoApp(), CursoView()],
       ),
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: currentPage,
+        iconSize: 35,
         onTap: _onTap,
         items: const [
           BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),

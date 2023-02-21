@@ -18,7 +18,6 @@ class CardBooks extends StatelessWidget {
 
     return GestureDetector(
       onTap: () {
-        // TODO: Abrir pdf
         Navigator.of(context).pushReplacement(
           MaterialPageRoute(
             builder: (context) => PdfViewPage(path),
