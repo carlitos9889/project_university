@@ -1,5 +1,12 @@
+import 'dart:io';
+
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:path_provider/path_provider.dart';
 import 'package:universidad/pages/pdf_page.dart';
+
+import 'package:pdf/pdf.dart';
+import 'package:pdf/widgets.dart' as pw;
 
 class CardBooks extends StatelessWidget {
   const CardBooks({
@@ -49,7 +56,7 @@ class CardBooks extends StatelessWidget {
             IconButton(
               iconSize: 25,
               onPressed: () {
-                Navigator.of(context).pushReplacement(
+                Navigator.of(context).push(
                   MaterialPageRoute(
                     builder: (context) => PdfViewPage(path),
                   ),
@@ -59,12 +66,33 @@ class CardBooks extends StatelessWidget {
             ),
             IconButton(
               iconSize: 25,
-              onPressed: () {},
+              onPressed: () {
+                download();
+              },
               icon: const Icon(Icons.download, color: Colors.white),
             ),
           ],
         ),
       ),
     );
+  }
+
+  void download() async {
+    // final pdf = pw.Document();
+
+    // final ttf = File('assets/open-sans.ttf').readAsBytesSync();
+
+    // pdf.addPage(pw.Page(
+    //     pageFormat: PdfPageFormat.a4,
+    //     build: (pw.Context context) {
+    //       return pw.Center(
+    //         child: pw.Text("Hello World", style: pw.TextStyle(font: ttf)),
+    //       ); // Center
+    //     }));
+
+    // final output = await getApplicationDocumentsDirectory();
+    // print(output.path);
+    // final file = File("${output.path}/example.pdf");
+    // await file.writeAsBytes(await pdf.save());
   }
 }

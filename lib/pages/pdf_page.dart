@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:pdfx/pdfx.dart';
-import 'package:universidad/pages/home_page.dart';
 
 // ignore: must_be_immutable
 class PdfViewPage extends StatefulWidget {
@@ -32,7 +31,7 @@ class _PdfViewPageState extends State<PdfViewPage> {
               ],
             ),
             onPressed: () {
-              Navigator.pushReplacementNamed(context, HomePage.routeName);
+              Navigator.pop(context);
             }),
       ),
       body: PdfViewPinch(controller: pdf),
