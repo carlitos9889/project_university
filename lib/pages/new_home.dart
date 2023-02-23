@@ -2,6 +2,7 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 import 'package:path_provider/path_provider.dart' as p;
 import 'package:uuid/uuid.dart';
 import 'package:webview_flutter/webview_flutter.dart';
@@ -63,10 +64,6 @@ Page resource error:
           ''');
           },
           onNavigationRequest: (NavigationRequest request) {
-            if (request.url.startsWith('https://www.youtube.com/')) {
-              debugPrint('blocking navigation to ${request.url}');
-              return NavigationDecision.prevent;
-            }
             if (request.url.endsWith('.docx') || request.url.endsWith('.pdf')) {
               String path = '';
               if (request.url.contains('201.docx')) {
@@ -84,6 +81,10 @@ Page resource error:
               } else {
                 getFileFromAsset(path).then((_) => {});
               }
+
+              // Future.delayed(Duration(seconds: 1)).then(
+              //   (value) => Fluttertoast.cancel(),
+              // );
 
               // getFileFromAsset(path).then((value) => {});
               // createNewFileInDocumentsDirectory('Teste.pdf');
@@ -133,7 +134,7 @@ Page resource error:
     );
   }
 
-  Future<File> getFileFromAsset(String asset) async {
+  Future<void> getFileFromAsset(String asset) async {
     try {
       var data = await rootBundle.load(
         'assets/www/viewer/files/Metacurso/Documentos/$asset',
@@ -143,9 +144,26 @@ Page resource error:
       // var dirAux = await p.getExternalStorageDirectory();
 
       File file = File("${dir.path}/$asset");
-      return await file.writeAsBytes(bytes);
+      await file.writeAsBytes(bytes);
+      Fluttertoast.showToast(
+        msg: '$asset Descargado',
+        toastLength: Toast.LENGTH_SHORT,
+        gravity: ToastGravity.CENTER,
+        timeInSecForIosWeb: 1,
+        backgroundColor: Colors.blue,
+        textColor: Colors.white,
+        fontSize: 16.0,
+      );
     } catch (e) {
-      throw Exception("Error al abrir el archivo");
+      Fluttertoast.showToast(
+        msg: e.toString(),
+        toastLength: Toast.LENGTH_SHORT,
+        gravity: ToastGravity.CENTER,
+        timeInSecForIosWeb: 1,
+        backgroundColor: Colors.redAccent,
+        textColor: Colors.white,
+        fontSize: 16.0,
+      );
     }
   }
 
@@ -165,8 +183,26 @@ Page resource error:
         ),
       );
       print('Archivo $fileName creado con exito');
+      Fluttertoast.showToast(
+        msg: '$fileName Descargado',
+        toastLength: Toast.LENGTH_SHORT,
+        gravity: ToastGravity.CENTER,
+        timeInSecForIosWeb: 1,
+        backgroundColor: Colors.blue,
+        textColor: Colors.white,
+        fontSize: 16.0,
+      );
     } catch (e) {
       print('Error al copiar archivo $fileName ${e.toString()}');
+      Fluttertoast.showToast(
+        msg: '$fileName Descargado',
+        toastLength: Toast.LENGTH_SHORT,
+        gravity: ToastGravity.CENTER,
+        timeInSecForIosWeb: 1,
+        backgroundColor: Colors.red,
+        textColor: Colors.white,
+        fontSize: 16.0,
+      );
     }
   }
 }
