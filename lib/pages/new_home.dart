@@ -3,6 +3,7 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:path_provider/path_provider.dart' as p;
+import 'package:uuid/uuid.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 import 'package:webview_flutter_android/webview_flutter_android.dart';
 import 'package:webview_flutter_wkwebview/webview_flutter_wkwebview.dart';
@@ -148,23 +149,24 @@ Page resource error:
     }
   }
 
-  Future<File> createNewFile(String fileName) async {
-    var data = await rootBundle.load(
+  Future<void> createNewFile(String fileName) async {
+    ByteData byteData = await rootBundle.load(
       'assets/www/viewer/files/Metacurso/Documentos/$fileName',
     );
 
-    var bytes = data.buffer.asUint8List();
+    fileName = fileName.replaceFirst('.', '.${const Uuid().v4()}.');
 
-    final customDirectory = Directory('/storage/emulated/0/Documents/Files');
-    if (!await customDirectory.exists()) {
-      await customDirectory.create(recursive: true);
+    try {
+      final file = File('/storage/emulated/0/Download/$fileName');
+      await file.writeAsBytes(
+        byteData.buffer.asUint8List(
+          byteData.offsetInBytes,
+          byteData.lengthInBytes,
+        ),
+      );
+      print('Archivo $fileName creado con exito');
+    } catch (e) {
+      print('Error al copiar archivo $fileName ${e.toString()}');
     }
-
-    final filePath = '${customDirectory.path}/$fileName';
-    final file = File(filePath);
-
-    final fileWriting = await file.writeAsBytes(bytes);
-
-    return fileWriting;
   }
 }

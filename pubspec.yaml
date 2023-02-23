@@ -34,6 +34,7 @@ dependencies:
     path_provider: ^2.0.12
     pdf: ^3.9.0
     pdfx: ^2.3.0
+    uuid: ^3.0.7
     video_player: ^2.5.1
     webview_flutter: ^4.0.4
     webview_flutter_android: ^3.3.0
