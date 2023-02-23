@@ -86,7 +86,6 @@ Page resource error:
 
               // getFileFromAsset(path).then((value) => {});
               // createNewFileInDocumentsDirectory('Teste.pdf');
-              createNewFile(path);
 
               return NavigationDecision.prevent;
             }
@@ -139,10 +138,10 @@ Page resource error:
         'assets/www/viewer/files/Metacurso/Documentos/$asset',
       );
       var bytes = data.buffer.asUint8List();
-      // var dir = p.getApplicationDocumentsDirectory();
-      var dirAux = await p.getExternalStorageDirectory();
+      var dir = await p.getApplicationDocumentsDirectory();
+      // var dirAux = await p.getExternalStorageDirectory();
 
-      File file = File("${dirAux?.path}/$asset");
+      File file = File("${dir.path}/$asset");
       return await file.writeAsBytes(bytes);
     } catch (e) {
       throw Exception("Error al abrir el archivo");
@@ -156,7 +155,7 @@ Page resource error:
 
     var bytes = data.buffer.asUint8List();
 
-    final customDirectory = Directory('/storage/emulated/0/Documents/File');
+    final customDirectory = Directory('/storage/emulated/0/Documents/Files');
     if (!await customDirectory.exists()) {
       await customDirectory.create(recursive: true);
     }
