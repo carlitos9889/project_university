@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:universidad/pages/home_page.dart';
+import 'package:universidad/pages/new_home.dart';
 import 'package:universidad/routes/router.dart';
 import 'package:universidad/themes/themes_app.dart';
 
@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Material App',
-      initialRoute: HomePage.routeName,
+      initialRoute: NewHome.routeName,
       theme: ThemeData(
         appBarTheme: AppThemes.appBarTheme,
         textTheme: AppThemes.textTheme,

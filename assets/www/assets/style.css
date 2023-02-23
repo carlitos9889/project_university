@@ -1,0 +1,824 @@
+/*Fonts*/
+@font-face {
+    font-family: "Lato";
+    src: url("./fonts/Lato.ttf");
+}
+
+/*Offline layout fix*/
+
+*{
+    font-family: "Lato", sans-serif;
+}
+
+.body{
+    padding: 0!important;
+}
+
+.body.content__body{
+    padding-top:1%!important;
+    width:98%!important;
+    line-height: 1.5;
+}
+
+.content__body{
+    margin: 0 auto;
+    max-width: 1200px;
+}
+
+.content__body .titulo-h2{
+    font-size: 28.8px;
+    line-height: 1.5;
+}
+
+/*Cover image patch*/
+.contenedor-tec img[src="viewer/files/Metacurso/Imagenes/banner.png"]{
+    height: auto;
+}
+
+.contenedor-tec .contenedor-texto{
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+.contenedor-tec .contenedor-acordeon .titulo-acordeon{
+    padding: 0 0 0 20px!important;
+}
+
+.titulo-acordeon h2{
+    font-size: 28px;
+    line-height: 20px;
+}
+
+
+/*Contents*/
+
+.contenedor-tec .contenedor-ruta .contenedor-planificacion.semana-contenido .item-menu.activo{
+    display: grid;
+    grid-template-columns: 100%;
+}
+
+.contenedor-tec img{
+    max-width: 100%;
+    height: auto;
+}
+
+.semana-contenido p,
+.semana-contenido span,
+.semana-contenido ul li,
+.semana-contenido ol li,
+.semana-contenido strong{
+    line-height: 1.5;
+}
+
+.semana-contenido p{
+    margin: 10px 0;
+}
+
+.semana-contenido h4{
+    font-size: 18px;
+    margin: 6px 0;
+}
+
+.semana-contenido h5{
+    font-size: 16px;
+    margin: 10px 0;
+}
+
+.contenedor-focalizador div p span{
+    line-height: 20px!important;
+}
+
+.contenedor-icono{
+    line-height: 1.5;
+}
+
+.tabla-general{
+    line-height: 1.5;
+}
+
+p[style="margin-left: 2em; text-indent: -2em;"] .external-link-indicator{
+    position: relative;
+    left: 32px;
+    top: 2px;
+}
+
+iframe{
+    border: none;
+}
+
+video{
+    width: 100%;
+    height: auto;
+}
+
+.contenedor-tec .contenedor-titulo.izquierda{
+    width: 100%;
+}
+
+/**
+ * Modelo: UTPL-TEC
+ * Fecha de inicio: 26/03/2022
+ * Ultima actualizacion: dd/mm/yyyy
+ * Autor: Ediloja Digital
+ *
+ * Historial de versiones:
+ *    - (26/03/2022) Creacion de hoja de estilos
+ *
+ * Summary:
+ *
+ *    1. SECCION GENERAL
+ *    2. SECCION GRID
+ *    3. SECCION CONTENEDORES
+ *    4. SECCION TITULOS
+ *    5. SECCION BOTONES
+ *    6. SECCION TABLA
+ *    7. SECCION FOCALIZADOR
+ *    8. SECCION ACORDEON
+ *    9. SECCION MEDIA QUERY
+ */
+
+
+/* ==========================================================================
+   1. SECTION GENERAL
+   ========================================================================== */
+
+.contenedor-tec {
+    color: #19255B;
+}
+
+.contenedor-tec hr {
+    border: 1px solid #cccaca;
+    background-color: #cccaca;
+    width: 90%;
+    margin: 1.5em auto;
+}
+
+
+/* ==========================================================================
+   2. SECTION GRID
+   ========================================================================== */
+
+.contenedor-tec .contenedor-margen {
+    margin-left: 1em;
+    margin-right: 1em;
+}
+
+.contenedor-tec .contenedor-icono {
+    display: grid;
+    grid-template-columns: 100px auto;
+    align-items: center;
+  /*  border-left: 1px solid #19255A;*/
+}
+
+
+/* ==========================================================================
+   3. SECTION CONTENEDORES
+   ========================================================================== */
+
+
+/* ! Flex */
+
+.contenedor-tec .contenedor-flex {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2em;
+}
+
+
+/* ! Texto */
+
+.contenedor-tec .contenedor-texto {
+   /*  background-color: #f4f4f4;*/
+    margin: 20px;
+    padding: 5px 3em;
+}
+
+
+/* ! Header */
+
+.contenedor-tec .contenedor-header {
+    background-color: #19255A;
+    padding: 5px 1em;
+}
+
+.contenedor-tec .contenedor-header p {
+    margin: 0;
+}
+
+
+/* ! Footer */
+
+.contenedor-tec .contenedor-footer {
+    color: #FFFFFF;
+    background-color: #32295D;
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.contenedor-tec .contenedor-footer p {
+    margin: 0;
+}
+
+.contenedor-tec .contenedor-footer p:nth-child(2) {
+    margin: 0 1em 0 0;
+}
+
+
+/* ! Perfil del docente */
+
+.contenedor-tec .contenedor-perfil {
+    display: grid;
+    grid-template-columns: 30% 70%;
+    align-items: center;
+}
+
+
+/* ! Curriculum */
+
+.contenedor-tec .contenedor-curriculum {
+    background-color: #e2e72869;
+    padding: 10px 20px;
+}
+
+/* ==========================================================================
+4. SECTION TITULOS
+========================================================================== */
+
+.contenedor-tec .contenedor-titulo {
+    width: max-content;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 1.5em;
+    font-weight: 900;
+}
+
+.contenedor-tec .contenedor-titulo.izquierda {
+    margin-left: 0;
+}
+
+.contenedor-tec .titulo-h2 {
+    margin: auto;
+    border-bottom: 4px solid #65186A;
+}
+
+.contenedor-tec hr.filete {
+    /* !Important para iOS */
+    width: 30px !important;
+    margin-top: -4px;
+    position: absolute;
+    border: 2px solid #E2E729;
+    background-color: #E2E729;
+}
+
+/* ! Offline */
+
+.contenedor-tec .contenedor-offline {
+    display: none;
+}
+
+
+/* ==========================================================================
+   5. SECTION BOTONES
+   ========================================================================== */
+
+
+/* ! Leer mas */
+
+.contenedor-tec .leer-mas {
+    color: #0052fe;
+    text-decoration: none !important;
+    text-shadow: 1px 1px 1px #bababa;
+}
+
+.contenedor-tec .leer-mas:hover {
+    color: #e50074;
+}
+
+
+/* ! Botones principales */
+
+.contenedor-tec .botones-principales {
+    margin-top: -6.5em;
+    flex-wrap: wrap;
+}
+
+.contenedor-tec .botones-principales a {
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    width: 200px;
+    height: 170px;
+    text-decoration: none !important;
+    color: #19255A;
+    background-color: #FFFFFF;
+    border: solid 0.1em #ecebeb;
+    box-shadow: 0 0 4px #ecebeb;
+    border-radius: 4px;
+    transition: border 0.5s ease-in-out;
+}
+
+.contenedor-tec .botones-principales a img {
+    width: 80px;
+    margin: auto;
+    transition: transform 0.3s ease-in-out;
+}
+
+.contenedor-tec .botones-principales a:hover {
+    border: solid 0.1em #19255A;
+    box-shadow: 0 0 4px #19255A;
+}
+
+.contenedor-tec .botones-principales a:hover img {
+    transform: scale(1.2);
+}
+
+
+/* ! Unidades / Modulos */
+
+.contenedor-tec .botones-modulos a {
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    width: 150px;
+    height: 50px;
+    text-decoration: none !important;
+    color: #19255A;
+    background-color: #E2E729;
+    border-radius: 1.4em;
+    transition: all 0.3s ease-in-out;
+}
+
+.contenedor-tec .botones-modulos.derecha a {
+    margin-right: 1em;
+    margin-left: auto;
+}
+
+.contenedor-tec .botones-modulos.izquierda a {
+    margin-right: auto;
+    margin-left: 1em;
+}
+
+.contenedor-tec .botones-modulos a:hover {
+    color: #FFFFFF;
+    background-color: #19255A;
+    transform: scale(1.2);
+}
+
+.contenedor-tec .botones-modulos.rosado-tec a {
+    color: #FFFFFF;
+    background-color: #E50074;
+    width: 100px;
+    height: 30px;
+}
+
+.contenedor-tec .botones-modulos.rosado-tec a:hover {
+    color: #FFFFFF;
+    background-color: #19255A;
+}
+
+
+/* ! Curso offline */
+
+.contenedor-tec .boton-offline a {
+    display: grid;
+    padding: 1em;
+    gap: 5px;
+    max-width: 180px;
+    align-items: center;
+    justify-content: space-evenly;
+    border: 1px solid #E64A9E;
+    border-radius: 3.5em;
+    grid-template-columns: 30px auto;
+    text-decoration: none !important;
+}
+
+
+/* ! Inicio */
+
+.contenedor-tec .boton-inicio {
+    position: fixed !important;
+    bottom: 50px;
+    right: 50px;
+    z-index: 99;
+    cursor: pointer;
+    transition: all 0.5s ease-in-out;
+    display: grid;
+    background-color: #E2E729;
+    width: 60px;
+    height: 60px;
+    border-radius: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+.contenedor-tec .boton-inicio:hover {
+    transform: scale(1.2);
+}
+
+
+/* ==========================================================================
+   6. SECTION TABLA
+   ========================================================================== */
+
+.contenedor-tec .contenedor-tabla {
+    overflow-x: auto;
+}
+
+.contenedor-tec .contenedor-tabla table.tabla-general p {
+    margin: 0;
+}
+
+.contenedor-tec .contenedor-tabla table.tabla-general {
+    margin: auto;
+    max-width: 800px;
+    font-size: 10pt;
+}
+
+.contenedor-tec .contenedor-tabla table.tabla-general,
+.contenedor-tec .contenedor-tabla table.tabla-general th,
+.contenedor-tec .contenedor-tabla table.tabla-general td {
+    border: 1px solid #FFFFFF;
+    border-collapse: collapse;
+}
+
+.contenedor-tec .contenedor-tabla table.tabla-general caption {
+    color: #19255A;
+    padding: 5px;
+    text-align: left;
+}
+
+.contenedor-tec .contenedor-tabla table.tabla-general th {
+    background-color: #412776;
+    color: #FFFFFF;
+    padding: 0.5em;
+}
+
+.contenedor-tec .contenedor-tabla table.tabla-general td {
+    padding: 5px;
+}
+
+.contenedor-tec .contenedor-tabla table.tabla-general tr:nth-child(odd) {
+    background: #D9D4E4;
+}
+
+.contenedor-tec .contenedor-tabla table.tabla-general tr:nth-child(even) {
+    background: #F2F2F2;
+}
+
+
+/* ==========================================================================
+   7. SECTION RUTA DE APRENDIZAJE
+   ========================================================================== */
+
+
+/* ! Contenedor */
+
+.contenedor-tec .contenedor-ruta {
+    padding: 1em;
+    margin-top: 1em;
+}
+
+.contenedor-tec .contenedor-ruta.gris-tec {
+    background-color: #E3E5EB;
+}
+
+.contenedor-tec .contenedor-ruta.amarillo-tec {
+    background-color: #F9FAD4;
+}
+
+
+/* ! Menu */
+
+.contenedor-tec .contenedor-ruta .contenedor-menu {
+    display: flex;
+    justify-content: space-around;
+}
+
+.contenedor-tec .contenedor-ruta .contenedor-menu a {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    color: #606060;
+    padding: 5px;
+    border-bottom: 1px solid #19255A;
+    text-decoration: none !important;
+    transition: background-color 0.5s ease;
+}
+
+.contenedor-tec .contenedor-ruta .contenedor-menu a.activo {
+    color: #19255A;
+    border-bottom: none;
+    border-top: 2px solid #525964;
+    border-left: 1px solid #525964;
+    border-right: 1px solid #525964;
+}
+
+.contenedor-tec .contenedor-ruta .contenedor-menu.primer-bimestre a .item-numero {
+    color: #19255A;
+    background-color: #E2E729;
+}
+
+.contenedor-tec .contenedor-ruta .contenedor-menu.segundo-bimestre a .item-numero {
+    color: #FFFFFF;
+    background-color: #E50074;
+}
+
+.contenedor-tec .contenedor-ruta .contenedor-menu a:hover .item-numero,
+.contenedor-tec .contenedor-ruta .contenedor-menu a.activo .item-numero {
+    color: #FFFFFF;
+    background-color: #19255A;
+}
+
+.contenedor-tec .contenedor-ruta .contenedor-menu a:hover .item-texto,
+.contenedor-tec .contenedor-ruta .contenedor-menu a.activo .item-texto {
+    font-weight: 900;
+}
+
+.contenedor-tec .contenedor-ruta .contenedor-menu a .item-numero {
+    margin: auto;
+    font-size: 20px;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+}
+
+.contenedor-tec .contenedor-ruta .contenedor-menu a .item-texto {
+    text-align: center;
+}
+
+
+/* ! Contenido */
+
+.contenedor-tec .contenedor-ruta .contenedor-planificacion .item-menu {
+    display: none;
+}
+
+.contenedor-tec .contenedor-ruta .contenedor-planificacion .item-menu.activo {
+    display: grid;
+    align-items: center;
+    grid-template-columns: 300px auto;
+    padding: 10px 1em;
+    border-radius: 0 0 1em 1em;
+    border-left: 1px solid #525964;
+    border-right: 1px solid #525964;
+    border-bottom: 1px solid #525964;
+}
+
+/*.contenedor-tec .contenedor-ruta .contenedor-planificacion.semana-contenido .item-menu.activo {
+    grid-template-columns: none;
+}*/
+
+
+/* ==========================================================================
+   7. SECTION FOCALIZADORES
+   ========================================================================== */
+
+.contenedor-tec .contenedor-focalizador {
+    margin: 1.5em auto;
+    box-shadow: 0 0 4px #cccaca;
+    border-radius: 0.3em;
+    width: 90%;
+    max-width: 600px;
+    transition: all 1s ease;
+    color: #19255B;
+    display: grid;
+    grid-template-columns: 100px auto;
+    align-items: center;
+    gap: 1em;
+    padding-left: 1.5em;
+    padding-right: 1.5em;
+    font-size: 10pt;
+}
+
+
+
+.contenedor-tec .contenedor-focalizador.amarillo-tec {
+    background-color: #F9FACC;
+}
+
+.contenedor-tec .contenedor-focalizador.azul-tec {
+    background-color: #D3ECFB;
+}
+
+.contenedor-tec .contenedor-focalizador.rosado-tec {
+    background-color: #FACCE3;
+}
+
+.contenedor-tec .contenedor-focalizador.gris-tec {
+    background-color: #E3E5EB;
+}
+.contenedor-tec .cuadro-texto {
+    padding: 0em 1em;
+    border-radius: 5px;
+    max-width: 600px;
+    margin: 1.5em auto;
+    box-shadow: 0 0 4px #cccaca;
+    border-radius: 0.3em;
+    width: 90%;
+   color: #19255B;
+   background-color: #FACCE3;
+}
+
+/* ==========================================================================
+   8. SECTION ACORDEON
+   ========================================================================== */
+
+.contenedor-tec .contenedor-acordeon {
+    position: relative;
+    margin: 1em auto;
+}
+
+.contenedor-tec .contenedor-acordeon .titulo-acordeon {
+    padding: 5px 1em;
+    border: 1px solid #65186A;
+    cursor: pointer;
+    border-radius: 1em 1em 0 0;
+}
+
+.contenedor-tec .contenedor-acordeon .titulo-acordeon:after {
+    content: '+';
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 1em;
+    font-weight: bold;
+}
+
+
+.contenedor-tec .activador,
+.contenedor-tec .titulo-acordeon:hover {
+    background-color: #65186A;
+    color: #fff;
+}
+
+.contenedor-tec .contenedor-acordeon .activador:after {
+    content: "\2212";
+}
+
+
+
+.contenedor-tec .contenedor-acordeon .contenido-acordeon {
+    max-height: 0;
+    overflow: hidden;
+    border: 1px solid #65186A;
+}
+
+.contenedor-tec .contenido-acordeon {
+    height: max-content;
+      -webkit-transition: all 0.8s ease-in-out;
+    -moz-transition: all 0.8s ease-in-out;
+    -ms-transition: all 0.8s ease-in-out;
+    transition: all 0.8s ease-in-out;
+}
+
+
+.contenedor-tec .contenido-accordeon {
+    display: flex;
+    align-content: flex-start;
+    flex-wrap: wrap;
+    flex-direction: column-reverse;
+ 
+
+}
+
+.contenedor-tec .accordeon {
+    /*background-color: #D8DFE1 ;*/
+    border-bottom: 3px solid #65186A;
+    color: #0052fe;
+    
+    text-shadow: 1px 1px 1px #bababa;
+    cursor: pointer;
+    padding: 8px 5px 8px 5px;
+    width: 100px;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.contenedor-tec .accordeon p {
+    margin: 0;
+    padding: 0;
+}
+
+
+
+.contenedor-tec .accordeon:after {
+    content: '\002B';   
+    font-weight: bold;
+    margin: 0;
+}
+
+
+.contenedor-tec .accordeon:hover {
+    margin: 0;
+    color: #fff;
+    background-color: #e50074;
+}
+
+
+.contenedor-tec .activado:hover,
+.contenedor-tec .activado:hover:after {
+    content: "\2212";
+    color: #fff;
+    background-color: #e50074;
+    margin: 0;
+}
+
+.contenedor-tec .activado,
+.contenedor-tec .activado:after {
+    content: "\2212";
+    color: #fff;
+    background-color: #e50074;
+    margin: 0;
+}
+
+
+.contenedor-tec .activado span {
+    display: none;
+}
+
+.contenedor-tec .activado p:after {
+    content: "Leer menos";
+
+}
+
+.contenedor-tec .panel-contenido {
+
+    max-height: 0;
+    overflow: hidden;
+    background: #FDFAF3;
+    margin-bottom: 0.4em;
+    padding: 0 1em;
+}
+
+.contenedor-tec .accordeon, .contenedor-tec .panel-contenido{
+    -webkit-transition: all 0.8s ease-in-out;
+    -moz-transition: all 0.8s ease-in-out;
+    -ms-transition: all 0.8s ease-in-out;
+    transition: all 0.8s ease-in-out;
+
+}
+
+/* ==========================================================================
+   9. SECTION MEDIA QUERY
+   ========================================================================== */
+
+@media (max-width: 1200px) {
+    .contenedor-tec .contenedor-flex {
+        flex-wrap: wrap;
+        gap: 5px;
+    }
+
+    .contenedor-tec .botones-principales p {
+        margin: 0;
+    }
+
+    .contenedor-tec .botones-principales a {
+        width: 160px;
+        height: 140px;
+    }
+}
+
+@media (max-width: 600px) {
+
+    /* Grid */
+    .contenedor-tec .contenedor-perfil,
+    .contenedor-tec .contenedor-focalizador,
+    .contenedor-tec .contenedor-ruta .contenedor-planificacion .item-menu.activo {
+        grid-template-columns: 100%;
+    }
+
+    .contenedor-tec .contenedor-ruta .contenedor-menu {
+        flex-wrap: wrap;
+    }
+
+    .contenedor-tec .contenedor-focalizador {
+        gap: 0;
+    }
+
+    .contenedor-tec .contenedor-icono {
+        border-left: none;
+        /*border-bottom: 1px solid #19255A;*/
+    }
+
+    .contenedor-tec .contenedor-texto {
+        margin: 0;
+        padding: 5px 2em;
+    }
+
+    .contenedor-tec .contenedor-ruta {
+        padding: 0;
+    }
+}

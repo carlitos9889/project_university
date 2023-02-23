@@ -2,16 +2,17 @@ import 'package:flutter/material.dart';
 
 class AppThemes {
   static AppBarTheme get appBarTheme => const AppBarTheme(
-        toolbarHeight: 200,
+        // toolbarHeight: 200,
+        centerTitle: true,
         elevation: 5,
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.only(
-            bottomLeft: Radius.circular(20),
-            bottomRight: Radius.circular(20),
-          ),
-        ),
+        // shape: RoundedRectangleBorder(
+        //   borderRadius: BorderRadius.only(
+        //     bottomLeft: Radius.circular(20),
+        //     bottomRight: Radius.circular(20),
+        //   ),
+        // ),
         titleTextStyle: TextStyle(
-          fontSize: 25,
+          fontSize: 20,
           fontWeight: FontWeight.w600,
         ),
       );

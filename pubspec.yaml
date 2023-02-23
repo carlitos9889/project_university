@@ -35,6 +35,9 @@ dependencies:
     pdf: ^3.9.0
     pdfx: ^2.3.0
     video_player: ^2.5.1
+    webview_flutter: ^4.0.4
+    webview_flutter_android: ^3.3.0
+    webview_flutter_wkwebview: ^3.1.0
 
 dev_dependencies:
     flutter_lints: ^2.0.0
@@ -52,9 +55,60 @@ flutter:
 
     # To add assets to your application, add an assets section, like this:
     assets:
-        - assets/books/
-        - assets/movies/
-        - assets/images/
+        - assets/www/index.html
+
+        - assets/www/assets/style.css
+        - assets/www/assets/scripts.js
+
+        - assets/www/assets/fonts/
+
+        - assets/www/assets/genially/624465cf961c7d001a678dc2/css/
+        - assets/www/assets/genially/624465cf961c7d001a678dc2/fonts/
+        - assets/www/assets/genially/624465cf961c7d001a678dc2/images/
+        - assets/www/assets/genially/624465cf961c7d001a678dc2/favicon.ico
+        - assets/www/assets/genially/624465cf961c7d001a678dc2/genially.html
+        - assets/www/assets/genially/624465cf961c7d001a678dc2/Instructions for use.pdf
+
+        - assets/www/assets/genially/624465db961c7d001a678dc4/css/
+        - assets/www/assets/genially/624465db961c7d001a678dc4/fonts/
+        - assets/www/assets/genially/624465db961c7d001a678dc4/images/
+        - assets/www/assets/genially/624465db961c7d001a678dc4/favicon.ico
+        - assets/www/assets/genially/624465db961c7d001a678dc4/genially.html
+        - assets/www/assets/genially/624465db961c7d001a678dc4/Instructions for use.pdf
+
+        - assets/www/assets/genially/624465deb0785b0018c76463/css/
+        - assets/www/assets/genially/624465deb0785b0018c76463/fonts/
+        - assets/www/assets/genially/624465deb0785b0018c76463/images/
+        - assets/www/assets/genially/624465deb0785b0018c76463/favicon.ico
+        - assets/www/assets/genially/624465deb0785b0018c76463/genially.html
+        - assets/www/assets/genially/624465deb0785b0018c76463/Instructions for use.pdf
+
+        - assets/www/assets/genially/624465e1b0785b0018c76465/css/
+        - assets/www/assets/genially/624465e1b0785b0018c76465/fonts/
+        - assets/www/assets/genially/624465e1b0785b0018c76465/images/
+        - assets/www/assets/genially/624465e1b0785b0018c76465/favicon.ico
+        - assets/www/assets/genially/624465e1b0785b0018c76465/genially.html
+        - assets/www/assets/genially/624465e1b0785b0018c76465/Instructions for use.pdf
+
+        - assets/www/assets/genially/624465e3119bd400114427f0/css/
+        - assets/www/assets/genially/624465e3119bd400114427f0/fonts/
+        - assets/www/assets/genially/624465e3119bd400114427f0/images/
+        - assets/www/assets/genially/624465e3119bd400114427f0/favicon.ico
+        - assets/www/assets/genially/624465e3119bd400114427f0/genially.html
+        - assets/www/assets/genially/624465e3119bd400114427f0/Instructions for use.pdf
+
+        - assets/www/viewer/bundle.js
+        - assets/www/viewer/course-data.js
+
+        - assets/www/assets/images/
+        - assets/www/assets/video/
+
+        - assets/www/viewer/files/Metacurso/Documentos/
+        - assets/www/viewer/files/Metacurso/Iconos/
+        - assets/www/viewer/files/Metacurso/Imagenes/
+        - assets/www/viewer/files/Metacurso/Imagenes/Encabezados/
+        - assets/www/viewer/files/Multimedia cargada/
+
     #   - images/a_dot_ham.jpeg
     # An image asset can refer to one or more resolution-specific "variants", see
     # https://flutter.dev/assets-and-images/#resolution-aware
@@ -65,10 +119,10 @@ flutter:
     # "family" key with the font family name, and a "fonts" key with a
     # list giving the asset and other descriptors for the font. For
     # example:
-    fonts:
-        - family: OpenSans
-          fonts:
-              - asset: assets/fonts/OpenSans-Regular.ttf
+    # fonts:
+    # - family: OpenSans
+    #   fonts:
+    #       - asset: assets/fonts/OpenSans-Regular.ttf
     #       - asset: fonts/Schyler-Italic.ttf
     #         style: italic
     #   - family: Trajan Pro
