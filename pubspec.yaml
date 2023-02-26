@@ -70,6 +70,7 @@ flutter:
         - assets/www/assets/genially/624465cf961c7d001a678dc2/favicon.ico
         - assets/www/assets/genially/624465cf961c7d001a678dc2/genially.html
         - assets/www/assets/genially/624465cf961c7d001a678dc2/Instructions for use.pdf
+        - assets/www/assets/genially/624465cf961c7d001a678dc2/static/js/
 
         - assets/www/assets/genially/624465db961c7d001a678dc4/css/
         - assets/www/assets/genially/624465db961c7d001a678dc4/fonts/
@@ -77,6 +78,7 @@ flutter:
         - assets/www/assets/genially/624465db961c7d001a678dc4/favicon.ico
         - assets/www/assets/genially/624465db961c7d001a678dc4/genially.html
         - assets/www/assets/genially/624465db961c7d001a678dc4/Instructions for use.pdf
+        - assets/www/assets/genially/624465db961c7d001a678dc4/static/js/
 
         - assets/www/assets/genially/624465deb0785b0018c76463/css/
         - assets/www/assets/genially/624465deb0785b0018c76463/fonts/
@@ -84,6 +86,7 @@ flutter:
         - assets/www/assets/genially/624465deb0785b0018c76463/favicon.ico
         - assets/www/assets/genially/624465deb0785b0018c76463/genially.html
         - assets/www/assets/genially/624465deb0785b0018c76463/Instructions for use.pdf
+        - assets/www/assets/genially/624465deb0785b0018c76463/static/js/
 
         - assets/www/assets/genially/624465e1b0785b0018c76465/css/
         - assets/www/assets/genially/624465e1b0785b0018c76465/fonts/
@@ -91,6 +94,7 @@ flutter:
         - assets/www/assets/genially/624465e1b0785b0018c76465/favicon.ico
         - assets/www/assets/genially/624465e1b0785b0018c76465/genially.html
         - assets/www/assets/genially/624465e1b0785b0018c76465/Instructions for use.pdf
+        - assets/www/assets/genially/624465e1b0785b0018c76465/static/js/
 
         - assets/www/assets/genially/624465e3119bd400114427f0/css/
         - assets/www/assets/genially/624465e3119bd400114427f0/fonts/
@@ -98,6 +102,7 @@ flutter:
         - assets/www/assets/genially/624465e3119bd400114427f0/favicon.ico
         - assets/www/assets/genially/624465e3119bd400114427f0/genially.html
         - assets/www/assets/genially/624465e3119bd400114427f0/Instructions for use.pdf
+        - assets/www/assets/genially/624465e3119bd400114427f0/static/js/
 
         - assets/www/viewer/bundle.js
         - assets/www/viewer/course-data.js
@@ -109,7 +114,7 @@ flutter:
         - assets/www/viewer/files/Metacurso/Iconos/
         - assets/www/viewer/files/Metacurso/Imagenes/
         - assets/www/viewer/files/Metacurso/Imagenes/Encabezados/
-        - assets/www/viewer/files/Multimedia cargada/
+        - assets/www/viewer/files/Multimedia_cargada/
 
     #   - images/a_dot_ham.jpeg
     # An image asset can refer to one or more resolution-specific "variants", see

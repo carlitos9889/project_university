@@ -64,33 +64,57 @@ Page resource error:
           ''');
           },
           onNavigationRequest: (NavigationRequest request) {
-            if (request.url.endsWith('.docx') || request.url.endsWith('.pdf')) {
-              String path = '';
-              if (request.url.contains('201.docx')) {
-                path = 'Caso 1.docx';
-              } else if (request.url.contains('203.docx')) {
-                path = 'Caso 3.docx';
-              } else if (request.url.contains('didactica.pdf')) {
-                path = 'Guia didactica.pdf';
-              } else {
-                path = 'Plan docente.pdf';
-              }
-
+            // if (request.url.endsWith('.docx') || request.url.endsWith('.pdf')) {
+            if (request.url.contains('Caso_1.docx')) {
               if (Platform.isAndroid) {
-                createNewFile(path);
+                createNewFile('Caso_1.docx');
               } else {
-                getFileFromAsset(path).then((_) => {});
+                getFileFromAsset('Caso_1.docx').then((_) => {});
               }
-
-              // Future.delayed(Duration(seconds: 1)).then(
-              //   (value) => Fluttertoast.cancel(),
-              // );
-
-              // getFileFromAsset(path).then((value) => {});
-              // createNewFileInDocumentsDirectory('Teste.pdf');
-
               return NavigationDecision.prevent;
             }
+            if (request.url.contains('Caso_3.docx')) {
+              if (Platform.isAndroid) {
+                createNewFile('Caso_3.docx');
+              } else {
+                getFileFromAsset('Caso_3.docx').then((_) => {});
+              }
+              return NavigationDecision.prevent;
+            }
+            if (request.url.contains('Plan_docente.pdf')) {
+              if (Platform.isAndroid) {
+                createNewFile('Plan_docente.pdf');
+              } else {
+                getFileFromAsset('Plan_docente.pdf').then((_) => {});
+              }
+              return NavigationDecision.prevent;
+            }
+            if (request.url.contains('Guia_didactica.pdf')) {
+              if (Platform.isAndroid) {
+                createNewFile('Guia_didactica.pdf');
+              } else {
+                getFileFromAsset('Guia_didactica.pdf').then((_) => {});
+              }
+              return NavigationDecision.prevent;
+            }
+            // if (request.url.contains('201.docx')) {
+            //   path = 'Caso_1.docx';
+            // } else if (request.url.contains('203.docx')) {
+            //   path = 'Caso_3.docx';
+            // } else if (request.url.contains('didactica.pdf')) {
+            //   path = 'Guia_didactica.pdf';
+            // } else {
+            //   path = 'Plan_docente.pdf';
+            // }
+
+            // Future.delayed(Duration(seconds: 1)).then(
+            //   (value) => Fluttertoast.cancel(),
+            // );
+
+            // getFileFromAsset(path).then((value) => {});
+            // createNewFileInDocumentsDirectory('Teste.pdf');
+
+            // }
             debugPrint('allowing navigation to ${request.url}');
 
             return NavigationDecision.navigate;
@@ -195,7 +219,7 @@ Page resource error:
     } catch (e) {
       print('Error al copiar archivo $fileName ${e.toString()}');
       Fluttertoast.showToast(
-        msg: '$fileName Descargado',
+        msg: e.toString(),
         toastLength: Toast.LENGTH_SHORT,
         gravity: ToastGravity.CENTER,
         timeInSecForIosWeb: 1,
